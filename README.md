@@ -1,18 +1,36 @@
-#Air Quality Index Prediction
-#📌 Project Overview
-This project predicts the Air Quality Index (AQI) using Machine Learning and Deep Learning techniques. The model is trained on historical air quality data and can forecast AQI levels based on pollutant concentrations like PM2.5, PM10, NO2, SO2, O3, CO, temperature, and humidity.
+# 🌍 Air Quality Index (AQI) Prediction  
 
-#⚡ Features
-✔️ Real-time AQI prediction based on pollutant levels.
-✔️ Historical data analysis to identify pollution trends.
-✔️ LSTM-based time series forecasting for accurate predictions.
-✔️ Data preprocessing with missing value handling & scaling.
-✔️ Visualization tools to analyze AQI trends.
+## 📌 Project Overview  
+This project predicts the **Air Quality Index (AQI)** using **Machine Learning and Deep Learning** techniques.  
+It analyzes historical air quality data and forecasts AQI levels based on **pollutant concentrations** like:  
+✅ **PM2.5**  
+✅ **PM10**  
+✅ **NO₂, SO₂, O₃, CO**  
+✅ **Temperature & Humidity**  
 
-#🛠 Tech Stack
-🔹 Python – Core programming language
-🔹 TensorFlow/Keras – LSTM model training
-🔹 Pandas, NumPy – Data preprocessing
-🔹 Matplotlib, Seaborn – Data visualization
-🔹 Scikit-learn – Machine learning models
+---
 
+## ⚡ Features  
+✔️ **Real-time AQI Prediction** based on pollutant levels  
+✔️ **Historical Data Analysis** to identify pollution trends  
+✔️ **LSTM-based Time Series Forecasting** for accurate predictions  
+✔️ **Data Preprocessing** with missing value handling & scaling  
+✔️ **Visualization Tools** to analyze AQI trends  
+
+---
+
+## 🛠 Tech Stack  
+🔹 **Python** – Core programming language  
+🔹 **TensorFlow/Keras** – LSTM model training  
+🔹 **Pandas, NumPy** – Data preprocessing  
+🔹 **Matplotlib, Seaborn** – Data visualization  
+🔹 **Scikit-learn** – Machine learning models  
+
+---
+
+## 📂 Dataset Used  
+The dataset contains air quality data collected from sources like:  
+📌 **Government agencies (EPA, CPCB, AQICN, OpenWeather API, etc.)**  
+📌 **Includes pollutant concentrations, temperature, and humidity**  
+
+---

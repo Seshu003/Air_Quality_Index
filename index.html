@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast & AQI</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Added Chart.js -->
+    <script defer src="/static/script.js"></script>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1 class="text">Weather & AQI Forecast</h1>
+        <p class="text-secondary">Get real-time weather updates and forecasts</p>
+        
+        <div class="search-box mt-4">
+            <input type="text" id="cityInput" class="form-control" placeholder="Search for a city...">
+            <button onclick="fetchWeatherAndAQI()" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div class="row mt-5 justify-content-center">
+            <!-- Weather Card -->
+            <div class="col-12 col-md-4">
+                <div class="card weather-card">
+                    <h3 id="cityName" class="city-name">Kākināda</h3>
+                    <p id="weatherCondition" class="text-muted">Broken clouds</p>
+                    <h2 id="temperature" class="display-3 fw-bold">39°C</h2>
+                    <div class="weather-info">
+                        <div class="weather-box"><span><i class="fas fa-tint"></i> Humidity: <span id="humidity">11%</span></span></div>
+                        <div class="weather-box"><span><i class="fas fa-wind"></i> Wind Speed: <span id="windSpeed">5.08 km/h</span></span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Air Quality Card -->
+            <div class="col-12 col-md-4">
+                <div class="card aqi-card">
+                    <h3 class="fw-bold" id="airQuality">Air Quality</h3>
+                    <div id="aqiStatus" class="aqi-status">| AQI: 4 | - Poor 😷</div>
+                    <div class="pollutants">
+                        <div class="pollutant-box"><span>PM2.5</span><br><span id="pm2_5">21.06 µg/m³</span></div>
+                        <div class="pollutant-box"><span>PM10</span><br><span id="pm10">25.13 µg/m³</span></div>
+                        <div class="pollutant-box"><span>NO₂</span><br><span id="no2">6.00 µg/m³</span></div>
+                        <div class="pollutant-box"><span>O₃</span><br><span id="o3">141.62 µg/m³</span></div>
+                        <div class="pollutant-box"><span>SO₂</span><br><span id="so2">16.45 µg/m³</span></div>
+                        <div class="pollutant-box"><span>CO</span><br><span id="co">350.48 µg/m³</span></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Air Quality Prediction Card -->
+            <div class="col-12 col-md-4">
+                <div class="card aqi-card">
+                    <h3 class="fw-bold" id="airQualityPred">Prediction of Air Quality</h3>
+                    <div id="aqiStatusPred" class="aqi-status">| AQI: 4 | - Poor 😷</div>
+                    <div class="pollutants">
+                        <div class="pollutant-box"><span>PM2.5</span><br><span id="pm25">24.97 µg/m³</span></div>
+                        <div class="pollutant-box"><span>PM10</span><br><span id="pm10_pred">26.14 µg/m³</span></div>
+                        <div class="pollutant-box"><span>NO₂</span><br><span id="no2_pred">8.27 µg/m³</span></div>
+                        <div class="pollutant-box"><span>O₃</span><br><span id="o3_pred">139.30 µg/m³</span></div>
+                        <div class="pollutant-box"><span>SO₂</span><br><span id="so2_pred">15.97 µg/m³</span></div>
+                        <div class="pollutant-box"><span>CO</span><br><span id="co_pred">351.35 µg/m³</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AQI Prediction Chart -->
+        <div class="chart-box mt-5">
+            <h3 class="chart-title">AQI Prediction Over Next 7 Days</h3>
+            <div class="chart-container">
+                <canvas id="aqiChart"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
